@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+
+            <a href="/dambldoor">Директор</a>
+            {% if current_user.is_authenticated == False %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+
+
+            {% else %}
+                <li><a href="{{ url_for('profile', student_id=current_user.id) }}">Перейти к профилю</a></li>
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="/gobletoffire">Goblet of fire cup</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div style="background-image: url('static/hogwarts.jpg'); background-repeat: no-repeat; background-size: auto auto; background-position: center; height: 1000px; ">
+        <div class="navbar" style="height: 300px;" ></div>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+        <script src="https://kit.fontawesome.com/4b741c9067.js" crossorigin="anonymous"></script>
+        {% block js %}{% endblock %}
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grades</title>
+</head>
+<body>
+    <h1>Grades for {{ student.name }}</h1>
+     <form action="/profile/{{ student.id }}/notes/add_note/" method="GET">
+            <button type="submit">add Note</button>
+     </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for note in notes %}
+            <tr>
+                <td>{{ note.note }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/profile/{{ current_user.id }}">Back to Profile</a>
+</body>
+</html>

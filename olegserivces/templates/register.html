@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3> Не используйте в качестве паролей клички домашних животных, даты рождения и тп</h3>
+    <h1>Register</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form action="{{ url_for('register') }}" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="teacher">Teacher:</label><br>
+        <select id="teacher" name="teacher">
+            {% for teacher in teachers %}
+                <option value="{{ teacher.id }}">{{ teacher.name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="password_hash">Password:</label><br>
+        <input type="password_hash" id="password_hash" name="password_hash"><br><br>
+        <input type="submit" value="Register">
+    </form>
+{% endblock content %}

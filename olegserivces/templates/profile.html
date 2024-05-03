@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to Your Profile, {{ student.name }}</h1>
+    <p>Teacher: {{ student.teacher.name }}</p>
+    {% if student.name=='dambldoor' %}
+    <a href="/students"> Список студентов </a>
+    {% else %}
+        <!-- Кнопка для просмотра оценок -->
+        <form action="/profile/{{ student.id }}/grades" method="GET">
+            <button type="submit">View Grades</button>
+        </form>
+        <!-- Кнопка для просмотра заметок -->
+        <form action="/profile/{{ student.id }}/notes" method="GET">
+            <button type="submit">View Notes</button>
+        </form>
+    {% endif %}
+{% endblock %}

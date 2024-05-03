@@ -1,0 +1,71 @@
+* {
+    font-family: Pobeda;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h3{
+    color:white;
+}
+@font-face {
+    font-family: 'Pobeda';
+    src: url('https://static.tildacdn.com/tild3039-6162-4531-a432-653335386261/pobeda-bold1.woff') format('woff');
+    font-weight: 500;
+    font-style: normal
+}
+
+body {
+	text-align: center;
+
+}
+
+/* .form {
+	text-align: center;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 50px;
+    display: inline-block;
+    position: relative;
+} */
+
+.text-center.mb-4{
+	padding-top: 220px;
+}
+
+.btn.btn-success {
+	margin-top: 16px;
+    background-color: #221a3f;
+    border-color: #221a3f;
+    bottom: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 160px;
+}
+
+.text-center {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+
+.index-btn {
+	/* position: absolute; */
+  width: 100%;
+  padding-top: 50px;
+}
+
+.index-log {
+  float: left;
+  margin-left: 120px;
+}
+
+.index-reg {
+  float: right;
+  margin-right: 120px;
+}
+
+.img-prfl{
+    width:200px;
+    height:200px;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать запись</title>
+</head>
+<body>
+    <h1>Создать запись</h1>
+    <form action="/profile/{{ student_id }}/notes/add_note" method="post">
+        <label for="data">Данные:</label><br>
+        <textarea id="data" name="data" rows="4" cols="50"></textarea><br>
+        <input type="hidden"  name="is_encrypted" value="">
+        <input type="checkbox" id="is_encrypted" name="is_encrypted" value=True>
+        <label for="is_encrypted">Зашифровать данные</label><br>
+        <input type="submit" value="Создать запись">
+    </form>
+</body>
+</html>
